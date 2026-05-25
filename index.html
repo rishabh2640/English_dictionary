@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Dictionary</title>
+    <meta name="description" content="A fast, modern English dictionary with instant search and rich definitions.">
+    <!-- Google Fonts for modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo">
+                <i class="ri-book-read-line"></i>
+                <h1>Dictionary</h1>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="search-container">
+                <div class="search-input-wrapper">
+                    <i class="ri-search-line search-icon"></i>
+                    <input type="text" id="searchInput" placeholder="Search for any word..." autocomplete="off">
+                    <div id="loadingSpinner" class="loading-spinner hidden"></div>
+                </div>
+                <!-- Autocomplete Dropdown -->
+                <ul id="autocompleteDropdown" class="autocomplete-dropdown hidden">
+                    <!-- Suggestions will go here -->
+                </ul>
+            </div>
+
+            <div id="errorContainer" class="error-container hidden">
+                <i class="ri-error-warning-line error-icon"></i>
+                <h2 id="errorTitle">Word Not Found</h2>
+                <p id="errorMessage">Sorry, we couldn't find definitions for the word you were looking for.</p>
+            </div>
+
+            <div id="resultsContainer" class="results-container hidden">
+                <!-- Header with Word and Audio -->
+                <div class="word-header">
+                    <div class="word-info">
+                        <h2 id="wordTitle" class="word-title"></h2>
+                        <span id="wordPhonetic" class="word-phonetic"></span>
+                    </div>
+                    <button id="playAudioBtn" class="play-btn hidden" aria-label="Play pronunciation">
+                        <i class="ri-play-fill"></i>
+                    </button>
+                </div>
+
+                <!-- Meanings Container -->
+                <div id="meaningsContainer" class="meanings-container">
+                    <!-- Meanings injected dynamically -->
+                </div>
+                
+                <!-- Source URL -->
+                <div id="sourceContainer" class="source-container hidden">
+                    <span>Source:</span>
+                    <a id="sourceLink" href="#" target="_blank" rel="noopener noreferrer"></a>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js" type="module"></script>
+</body>
+</html>
